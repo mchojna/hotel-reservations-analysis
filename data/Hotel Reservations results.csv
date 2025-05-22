@@ -1,0 +1,16 @@
+,model,columns,best_params,training_time,accuracy,precision,recall,f1,roc_auc
+0,GaussianNB,['has_special_request'],{},0.3511068820953369,0.6849,0.0,0.0,0.0,0.64
+1,KNeighborsClassifier,['has_special_request'],{'n_neighbors': 3},24.94616198539734,0.6849,0.0,0.0,0.0,0.36
+2,LogisticRegression,['has_special_request'],"{'C': 0.001, 'max_iter': 100}",0.6882281303405762,0.6849,0.0,0.0,0.0,0.64
+3,LinearDiscriminantAnalysis,['has_special_request'],{},0.04152178764343262,0.6849,0.0,0.0,0.0,0.64
+4,QuadraticDiscriminantAnalysis,['has_special_request'],{},0.038768768310546875,0.6849,0.0,0.0,0.0,0.64
+5,GaussianNB,['lead_time_scaled'],{},0.06061887741088867,0.7622,0.7137,0.41,0.521,0.753
+6,KNeighborsClassifier,['lead_time_scaled'],{'n_neighbors': 12},6.2219860553741455,0.7638,0.7119,0.421,0.529,0.749
+7,LogisticRegression,['lead_time_scaled'],"{'C': 0.1, 'max_iter': 100}",0.4099130630493164,0.7631,0.7144,0.413,0.524,0.753
+8,LinearDiscriminantAnalysis,['lead_time_scaled'],{},0.04013705253601074,0.7599,0.6967,0.422,0.525,0.753
+9,QuadraticDiscriminantAnalysis,['lead_time_scaled'],{},0.039743900299072266,0.7622,0.7137,0.41,0.521,0.753
+10,GaussianNB,"['has_special_request', 'lead_time_scaled']",{},0.06549715995788574,0.7547,0.6845,0.411,0.514,0.796
+11,KNeighborsClassifier,"['has_special_request', 'lead_time_scaled']",{'n_neighbors': 12},7.049801826477051,0.7758,0.7166,0.477,0.573,0.791
+12,LogisticRegression,"['has_special_request', 'lead_time_scaled']","{'C': 0.001, 'max_iter': 100}",0.5434632301330566,0.7531,0.6989,0.38,0.493,0.791
+13,LinearDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled']",{},0.07999396324157715,0.752,0.6696,0.42,0.516,0.794
+14,QuadraticDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled']",{},0.06418204307556152,0.7565,0.6896,0.413,0.517,0.796

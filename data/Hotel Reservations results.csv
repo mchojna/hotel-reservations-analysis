@@ -1,16 +1,218 @@
-,model,columns,best_params,training_time,accuracy,precision,recall,f1,roc_auc
-0,GaussianNB,['has_special_request'],{},0.3511068820953369,0.6849,0.0,0.0,0.0,0.64
-1,KNeighborsClassifier,['has_special_request'],{'n_neighbors': 3},24.94616198539734,0.6849,0.0,0.0,0.0,0.36
-2,LogisticRegression,['has_special_request'],"{'C': 0.001, 'max_iter': 100}",0.6882281303405762,0.6849,0.0,0.0,0.0,0.64
-3,LinearDiscriminantAnalysis,['has_special_request'],{},0.04152178764343262,0.6849,0.0,0.0,0.0,0.64
-4,QuadraticDiscriminantAnalysis,['has_special_request'],{},0.038768768310546875,0.6849,0.0,0.0,0.0,0.64
-5,GaussianNB,['lead_time_scaled'],{},0.06061887741088867,0.7622,0.7137,0.41,0.521,0.753
-6,KNeighborsClassifier,['lead_time_scaled'],{'n_neighbors': 12},6.2219860553741455,0.7638,0.7119,0.421,0.529,0.749
-7,LogisticRegression,['lead_time_scaled'],"{'C': 0.1, 'max_iter': 100}",0.4099130630493164,0.7631,0.7144,0.413,0.524,0.753
-8,LinearDiscriminantAnalysis,['lead_time_scaled'],{},0.04013705253601074,0.7599,0.6967,0.422,0.525,0.753
-9,QuadraticDiscriminantAnalysis,['lead_time_scaled'],{},0.039743900299072266,0.7622,0.7137,0.41,0.521,0.753
-10,GaussianNB,"['has_special_request', 'lead_time_scaled']",{},0.06549715995788574,0.7547,0.6845,0.411,0.514,0.796
-11,KNeighborsClassifier,"['has_special_request', 'lead_time_scaled']",{'n_neighbors': 12},7.049801826477051,0.7758,0.7166,0.477,0.573,0.791
-12,LogisticRegression,"['has_special_request', 'lead_time_scaled']","{'C': 0.001, 'max_iter': 100}",0.5434632301330566,0.7531,0.6989,0.38,0.493,0.791
-13,LinearDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled']",{},0.07999396324157715,0.752,0.6696,0.42,0.516,0.794
-14,QuadraticDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled']",{},0.06418204307556152,0.7565,0.6896,0.413,0.517,0.796
+,model,columns,best_params,training_time,accuracy,precision,recall,f1,roc_auc,mean_fit_time,predict_time
+0,GaussianNB,['guests_per_night'],{},6.173116207122803,0.6849,0.0,0.0,0.0,0.503,0.012,0.006
+1,KNeighborsClassifier,['guests_per_night'],{'n_neighbors': 5},14.710338830947876,0.6158,0.3475,0.25,0.291,0.524,0.016,0.529
+2,LogisticRegression,['guests_per_night'],"{'C': 0.001, 'max_iter': 100}",0.9648199081420898,0.6849,0.0,0.0,0.0,0.505,0.025,0.002
+3,LinearDiscriminantAnalysis,['guests_per_night'],{},0.1026909351348877,0.6849,0.0,0.0,0.0,0.505,0.013,0.001
+4,QuadraticDiscriminantAnalysis,['guests_per_night'],{},0.101104736328125,0.6849,0.0,0.0,0.0,0.503,0.008,0.002
+5,DecisionTreeClassifier,['guests_per_night'],"{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.9147679805755615,0.6891,0.7377,0.021,0.04,0.539,0.011,0.001
+6,RandomForestClassifier,['guests_per_night'],"{'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}",141.54818773269653,0.6891,0.7377,0.021,0.04,0.54,1.598,0.026
+7,GaussianNB,['has_special_request'],{},0.12967610359191895,0.6849,0.0,0.0,0.0,0.64,0.01,0.002
+8,KNeighborsClassifier,['has_special_request'],{'n_neighbors': 3},12.990063905715942,0.6849,0.0,0.0,0.0,0.36,0.02,0.458
+9,LogisticRegression,['has_special_request'],"{'C': 0.001, 'max_iter': 100}",0.5202991962432861,0.6849,0.0,0.0,0.0,0.64,0.01,0.001
+10,LinearDiscriminantAnalysis,['has_special_request'],{},0.05134916305541992,0.6849,0.0,0.0,0.0,0.64,0.011,0.0
+11,QuadraticDiscriminantAnalysis,['has_special_request'],{},0.04807877540588379,0.6849,0.0,0.0,0.0,0.64,0.009,0.001
+12,DecisionTreeClassifier,['has_special_request'],"{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.45540714263916016,0.6849,0.0,0.0,0.0,0.64,0.004,0.001
+13,RandomForestClassifier,['has_special_request'],"{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",59.41972804069519,0.6849,0.0,0.0,0.0,0.64,0.723,0.012
+14,GaussianNB,"['guests_per_night', 'has_special_request']",{},0.13174223899841309,0.6849,0.0,0.0,0.0,0.64,0.019,0.003
+15,KNeighborsClassifier,"['guests_per_night', 'has_special_request']",{'n_neighbors': 7},5.568835973739624,0.6576,0.4537,0.424,0.439,0.632,0.015,0.179
+16,LogisticRegression,"['guests_per_night', 'has_special_request']","{'C': 0.001, 'max_iter': 100}",0.4862818717956543,0.6849,0.0,0.0,0.0,0.64,0.01,0.001
+17,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request']",{},0.06009387969970703,0.6849,0.0,0.0,0.0,0.64,0.013,0.001
+18,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request']",{},0.05269980430603027,0.6849,0.0,0.0,0.0,0.643,0.008,0.002
+19,DecisionTreeClassifier,"['guests_per_night', 'has_special_request']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.761106014251709,0.6947,0.6056,0.089,0.156,0.665,0.009,0.002
+20,RandomForestClassifier,"['guests_per_night', 'has_special_request']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}",102.89002180099487,0.6947,0.6056,0.089,0.156,0.665,1.119,0.076
+21,GaussianNB,['lead_time_scaled'],{},0.1474900245666504,0.7622,0.7137,0.41,0.521,0.753,0.015,0.002
+22,KNeighborsClassifier,['lead_time_scaled'],{'n_neighbors': 9},4.4803571701049805,0.7588,0.6925,0.422,0.524,0.741,0.018,0.104
+23,LogisticRegression,['lead_time_scaled'],"{'C': 0.1, 'max_iter': 100}",0.5222568511962891,0.7631,0.7144,0.413,0.524,0.753,0.008,0.001
+24,LinearDiscriminantAnalysis,['lead_time_scaled'],{},0.05083417892456055,0.7599,0.6967,0.422,0.525,0.753,0.009,0.001
+25,QuadraticDiscriminantAnalysis,['lead_time_scaled'],{},0.04774618148803711,0.7622,0.7137,0.41,0.521,0.753,0.005,0.001
+26,DecisionTreeClassifier,['lead_time_scaled'],"{'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2}",0.7932569980621338,0.7751,0.7451,0.435,0.549,0.772,0.015,0.002
+27,RandomForestClassifier,['lead_time_scaled'],"{'max_depth': 20, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}",197.36809706687927,0.7746,0.7504,0.427,0.544,0.775,2.27,0.049
+28,GaussianNB,"['guests_per_night', 'lead_time_scaled']",{},0.173353910446167,0.7592,0.7045,0.406,0.515,0.74,0.029,0.008
+29,KNeighborsClassifier,"['guests_per_night', 'lead_time_scaled']",{'n_neighbors': 9},3.7794270515441895,0.7782,0.7099,0.501,0.587,0.772,0.013,0.113
+30,LogisticRegression,"['guests_per_night', 'lead_time_scaled']","{'C': 1, 'max_iter': 100}",0.4401121139526367,0.7604,0.7041,0.413,0.521,0.753,0.01,0.001
+31,LinearDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled']",{},0.05504012107849121,0.7615,0.7038,0.42,0.526,0.753,0.012,0.001
+32,QuadraticDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled']",{},0.04961204528808594,0.7595,0.7063,0.405,0.515,0.746,0.007,0.001
+33,DecisionTreeClassifier,"['guests_per_night', 'lead_time_scaled']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 10}",0.9426140785217285,0.7863,0.7364,0.501,0.597,0.784,0.022,0.001
+34,RandomForestClassifier,"['guests_per_night', 'lead_time_scaled']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}",240.92684388160706,0.7892,0.7292,0.527,0.612,0.795,2.683,0.07
+35,GaussianNB,"['has_special_request', 'lead_time_scaled']",{},0.1448380947113037,0.7547,0.6845,0.411,0.514,0.796,0.012,0.006
+36,KNeighborsClassifier,"['has_special_request', 'lead_time_scaled']",{'n_neighbors': 7},3.9165430068969727,0.7781,0.6962,0.525,0.598,0.777,0.013,0.116
+37,LogisticRegression,"['has_special_request', 'lead_time_scaled']","{'C': 1, 'max_iter': 100}",0.4641108512878418,0.7517,0.6679,0.422,0.517,0.795,0.009,0.002
+38,LinearDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled']",{},0.056279897689819336,0.752,0.6696,0.42,0.516,0.794,0.011,0.0
+39,QuadraticDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled']",{},0.05131864547729492,0.7565,0.6896,0.413,0.517,0.796,0.005,0.001
+40,DecisionTreeClassifier,"['has_special_request', 'lead_time_scaled']","{'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10}",0.8293781280517578,0.7833,0.7232,0.506,0.595,0.819,0.018,0.001
+41,RandomForestClassifier,"['has_special_request', 'lead_time_scaled']","{'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}",218.8716218471527,0.7873,0.7342,0.51,0.602,0.823,2.483,0.128
+42,GaussianNB,"['guests_per_night', 'has_special_request', 'lead_time_scaled']",{},0.18050503730773926,0.7546,0.6839,0.411,0.514,0.786,0.021,0.001
+43,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled']",{'n_neighbors': 9},4.011362075805664,0.7993,0.7304,0.576,0.644,0.823,0.013,0.117
+44,LogisticRegression,"['guests_per_night', 'has_special_request', 'lead_time_scaled']","{'C': 100, 'max_iter': 100}",0.5106327533721924,0.7572,0.6832,0.428,0.526,0.796,0.012,0.001
+45,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled']",{},0.0576629638671875,0.7572,0.683,0.428,0.526,0.795,0.014,0.001
+46,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled']",{},0.05156302452087402,0.7572,0.6911,0.415,0.518,0.793,0.013,0.001
+47,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10}",1.0405049324035645,0.8058,0.7479,0.579,0.653,0.819,0.026,0.002
+48,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled']","{'max_depth': 30, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}",259.090136051178,0.8106,0.7516,0.596,0.665,0.84,2.855,0.075
+49,GaussianNB,['avg_price_per_room_scaled'],{},0.1179041862487793,0.6836,0.4483,0.018,0.034,0.59,0.012,0.001
+50,KNeighborsClassifier,['avg_price_per_room_scaled'],{'n_neighbors': 3},3.5171031951904297,0.6787,0.4876,0.386,0.431,0.642,0.01,0.099
+51,LogisticRegression,['avg_price_per_room_scaled'],"{'C': 0.1, 'max_iter': 100}",0.3728041648864746,0.6826,0.4286,0.022,0.042,0.59,0.006,0.001
+52,LinearDiscriminantAnalysis,['avg_price_per_room_scaled'],{},0.04305100440979004,0.6801,0.3759,0.023,0.043,0.59,0.005,0.0
+53,QuadraticDiscriminantAnalysis,['avg_price_per_room_scaled'],{},0.037047624588012695,0.6836,0.4483,0.018,0.034,0.59,0.004,0.001
+54,DecisionTreeClassifier,['avg_price_per_room_scaled'],"{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.050227165222168,0.7149,0.584,0.331,0.423,0.716,0.028,0.001
+55,RandomForestClassifier,['avg_price_per_room_scaled'],"{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}",323.6832666397095,0.7117,0.571,0.342,0.428,0.72,3.97,0.184
+56,GaussianNB,"['guests_per_night', 'avg_price_per_room_scaled']",{},0.09992194175720215,0.6833,0.4304,0.016,0.03,0.59,0.02,0.001
+57,KNeighborsClassifier,"['guests_per_night', 'avg_price_per_room_scaled']",{'n_neighbors': 5},4.184402942657471,0.7226,0.5679,0.5,0.532,0.725,0.012,0.106
+58,LogisticRegression,"['guests_per_night', 'avg_price_per_room_scaled']","{'C': 10, 'max_iter': 100}",0.4592020511627197,0.6796,0.3688,0.024,0.045,0.59,0.009,0.001
+59,LinearDiscriminantAnalysis,"['guests_per_night', 'avg_price_per_room_scaled']",{},0.05932807922363281,0.6775,0.3416,0.025,0.047,0.59,0.011,0.001
+60,QuadraticDiscriminantAnalysis,"['guests_per_night', 'avg_price_per_room_scaled']",{},0.05374002456665039,0.6764,0.3333,0.027,0.05,0.591,0.005,0.001
+61,DecisionTreeClassifier,"['guests_per_night', 'avg_price_per_room_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.2546639442443848,0.7299,0.5894,0.471,0.523,0.724,0.031,0.002
+62,RandomForestClassifier,"['guests_per_night', 'avg_price_per_room_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",299.8028359413147,0.7226,0.5693,0.491,0.527,0.742,3.495,0.08
+63,GaussianNB,"['has_special_request', 'avg_price_per_room_scaled']",{},0.11512017250061035,0.6948,0.5804,0.114,0.191,0.704,0.013,0.003
+64,KNeighborsClassifier,"['has_special_request', 'avg_price_per_room_scaled']",{'n_neighbors': 7},4.116671323776245,0.7321,0.5841,0.52,0.55,0.757,0.012,0.133
+65,LogisticRegression,"['has_special_request', 'avg_price_per_room_scaled']","{'C': 10, 'max_iter': 100}",0.5894720554351807,0.7067,0.6125,0.188,0.288,0.699,0.009,0.001
+66,LinearDiscriminantAnalysis,"['has_special_request', 'avg_price_per_room_scaled']",{},0.0556337833404541,0.7062,0.6091,0.189,0.289,0.699,0.011,0.0
+67,QuadraticDiscriminantAnalysis,"['has_special_request', 'avg_price_per_room_scaled']",{},0.04404497146606445,0.709,0.5937,0.242,0.344,0.703,0.007,0.001
+68,DecisionTreeClassifier,"['has_special_request', 'avg_price_per_room_scaled']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.6101727485656738,0.7658,0.6851,0.475,0.561,0.773,0.04,0.002
+69,RandomForestClassifier,"['has_special_request', 'avg_price_per_room_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",312.83806324005127,0.7647,0.6758,0.487,0.566,0.784,3.785,0.067
+70,GaussianNB,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']",{},0.11897587776184082,0.7048,0.6402,0.144,0.235,0.7,0.011,0.006
+71,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']",{'n_neighbors': 7},4.064273834228516,0.7605,0.6436,0.538,0.586,0.781,0.015,0.118
+72,LogisticRegression,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']","{'C': 10, 'max_iter': 100}",0.6539251804351807,0.7116,0.6262,0.21,0.315,0.698,0.013,0.001
+73,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']",{},0.05540299415588379,0.7117,0.6214,0.218,0.323,0.698,0.019,0.001
+74,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']",{},0.05666518211364746,0.7169,0.622,0.259,0.366,0.7,0.006,0.001
+75,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.5156850814819336,0.7821,0.6876,0.565,0.621,0.781,0.035,0.004
+76,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}",297.37950682640076,0.7818,0.6873,0.565,0.62,0.809,3.377,0.163
+77,GaussianNB,"['lead_time_scaled', 'avg_price_per_room_scaled']",{},0.11816596984863281,0.7673,0.7257,0.42,0.532,0.76,0.02,0.002
+78,KNeighborsClassifier,"['lead_time_scaled', 'avg_price_per_room_scaled']",{'n_neighbors': 3},3.7087929248809814,0.8039,0.7043,0.651,0.677,0.819,0.012,0.147
+79,LogisticRegression,"['lead_time_scaled', 'avg_price_per_room_scaled']","{'C': 10, 'max_iter': 100}",0.542715311050415,0.7598,0.6831,0.443,0.538,0.765,0.008,0.001
+80,LinearDiscriminantAnalysis,"['lead_time_scaled', 'avg_price_per_room_scaled']",{},0.05879998207092285,0.7608,0.6842,0.447,0.541,0.766,0.01,0.001
+81,QuadraticDiscriminantAnalysis,"['lead_time_scaled', 'avg_price_per_room_scaled']",{},0.05570077896118164,0.765,0.7098,0.43,0.536,0.757,0.006,0.002
+82,DecisionTreeClassifier,"['lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.9266819953918457,0.8145,0.727,0.658,0.691,0.793,0.052,0.003
+83,RandomForestClassifier,"['lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}",367.2951581478119,0.8231,0.7581,0.644,0.697,0.87,4.331,0.177
+84,GaussianNB,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.11718988418579102,0.7653,0.7184,0.419,0.53,0.753,0.015,0.002
+85,KNeighborsClassifier,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']",{'n_neighbors': 3},3.795041084289551,0.8009,0.7014,0.641,0.67,0.819,0.012,0.096
+86,LogisticRegression,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'C': 1, 'max_iter': 100}",0.5597398281097412,0.7593,0.6822,0.442,0.537,0.765,0.01,0.002
+87,LinearDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.09636402130126953,0.7609,0.6844,0.448,0.541,0.766,0.012,0.001
+88,QuadraticDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.08511114120483398,0.7661,0.7099,0.436,0.54,0.755,0.008,0.002
+89,DecisionTreeClassifier,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",2.394822120666504,0.8051,0.6949,0.68,0.687,0.78,0.074,0.003
+90,RandomForestClassifier,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",331.3654582500458,0.8221,0.7445,0.663,0.701,0.871,3.859,0.091
+91,GaussianNB,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.12596583366394043,0.7621,0.7059,0.42,0.527,0.808,0.015,0.001
+92,KNeighborsClassifier,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{'n_neighbors': 3},4.0083909034729,0.842,0.7694,0.712,0.74,0.864,0.013,0.101
+93,LogisticRegression,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'C': 1, 'max_iter': 100}",0.4732842445373535,0.7765,0.7098,0.492,0.581,0.811,0.011,0.001
+94,LinearDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.05955219268798828,0.7749,0.7063,0.489,0.578,0.811,0.013,0.001
+95,QuadraticDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.06056809425354004,0.7775,0.716,0.487,0.58,0.809,0.007,0.001
+96,DecisionTreeClassifier,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 10}",1.9983060359954834,0.8487,0.7853,0.715,0.749,0.868,0.057,0.003
+97,RandomForestClassifier,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}",349.6172821521759,0.8684,0.8299,0.733,0.778,0.911,4.067,0.604
+98,GaussianNB,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.13419294357299805,0.7611,0.6994,0.424,0.528,0.802,0.025,0.005
+99,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{'n_neighbors': 3},4.297461986541748,0.843,0.7729,0.711,0.74,0.861,0.014,0.127
+100,LogisticRegression,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'C': 1, 'max_iter': 100}",0.6042721271514893,0.7764,0.7094,0.492,0.581,0.811,0.013,0.001
+101,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.07149076461791992,0.7751,0.7068,0.489,0.578,0.811,0.011,0.001
+102,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']",{},0.05376100540161133,0.7762,0.7123,0.486,0.578,0.808,0.008,0.001
+103,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2}",2.162842035293579,0.842,0.7622,0.725,0.743,0.829,0.06,0.004
+104,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}",401.5478026866913,0.8735,0.8463,0.731,0.785,0.916,4.831,0.25
+105,GaussianNB,"['season_Spring', 'season_Summer', 'season_Winter']",{},0.11704182624816895,0.6227,0.3901,0.35,0.369,0.587,0.024,0.003
+106,KNeighborsClassifier,"['season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 9},12.173778057098389,0.6126,0.3274,0.217,0.261,0.523,0.014,0.373
+107,LogisticRegression,"['season_Spring', 'season_Summer', 'season_Winter']","{'C': 0.001, 'max_iter': 100}",0.5106449127197266,0.6849,0.0,0.0,0.0,0.587,0.011,0.001
+108,LinearDiscriminantAnalysis,"['season_Spring', 'season_Summer', 'season_Winter']",{},0.06402206420898438,0.6849,0.0,0.0,0.0,0.587,0.013,0.001
+109,QuadraticDiscriminantAnalysis,"['season_Spring', 'season_Summer', 'season_Winter']",{},0.056890010833740234,0.6227,0.3901,0.35,0.369,0.587,0.009,0.002
+110,DecisionTreeClassifier,"['season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.5252208709716797,0.6849,0.0,0.0,0.0,0.587,0.005,0.001
+111,RandomForestClassifier,"['season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",81.56327199935913,0.6849,0.0,0.0,0.0,0.587,0.969,0.013
+112,GaussianNB,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.08978986740112305,0.6263,0.3924,0.339,0.364,0.589,0.005,0.002
+113,KNeighborsClassifier,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 7},6.396555185317993,0.6288,0.3991,0.352,0.374,0.563,0.015,0.169
+114,LogisticRegression,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 0.001, 'max_iter': 100}",0.4257931709289551,0.6849,0.0,0.0,0.0,0.589,0.01,0.001
+115,LinearDiscriminantAnalysis,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.04741382598876953,0.6849,0.0,0.0,0.0,0.589,0.007,0.001
+116,QuadraticDiscriminantAnalysis,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.05802488327026367,0.638,0.4026,0.308,0.349,0.594,0.005,0.001
+117,DecisionTreeClassifier,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.6287291049957275,0.6858,0.5205,0.035,0.065,0.609,0.009,0.002
+118,RandomForestClassifier,"['guests_per_night', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}",135.79927587509155,0.6858,0.5183,0.039,0.072,0.609,1.488,0.061
+119,GaussianNB,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.1266181468963623,0.6647,0.4775,0.68,0.561,0.69,0.011,0.002
+120,KNeighborsClassifier,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 9},10.167195081710815,0.6847,0.4994,0.186,0.271,0.627,0.016,0.311
+121,LogisticRegression,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 0.01, 'max_iter': 100}",0.5435521602630615,0.691,0.5202,0.248,0.336,0.69,0.012,0.001
+122,LinearDiscriminantAnalysis,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06369781494140625,0.691,0.5202,0.248,0.336,0.69,0.014,0.001
+123,QuadraticDiscriminantAnalysis,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.060606956481933594,0.6908,0.5111,0.434,0.469,0.697,0.007,0.001
+124,DecisionTreeClassifier,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.565086841583252,0.691,0.5202,0.248,0.336,0.7,0.007,0.002
+125,RandomForestClassifier,"['has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",96.23546195030212,0.691,0.5202,0.248,0.336,0.7,1.101,0.022
+126,GaussianNB,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.11522912979125977,0.6646,0.4752,0.62,0.538,0.689,0.006,0.01
+127,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 5},6.667210817337036,0.685,0.5003,0.391,0.439,0.638,0.017,0.203
+128,LogisticRegression,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 0.1, 'max_iter': 100}",0.6822829246520996,0.6905,0.5188,0.246,0.334,0.69,0.015,0.002
+129,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07770395278930664,0.6905,0.5188,0.246,0.334,0.691,0.014,0.001
+130,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.05970501899719238,0.6778,0.4902,0.56,0.523,0.697,0.008,0.001
+131,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 4, 'min_samples_split': 2}",0.7324550151824951,0.7058,0.5576,0.321,0.408,0.715,0.012,0.002
+132,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}",147.65720295906067,0.7058,0.5576,0.321,0.408,0.715,1.565,0.117
+133,GaussianNB,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.14292097091674805,0.7465,0.6239,0.492,0.55,0.746,0.024,0.003
+134,KNeighborsClassifier,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 9},5.398436069488525,0.7693,0.6782,0.51,0.582,0.781,0.017,0.136
+135,LogisticRegression,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",0.5450968742370605,0.7546,0.6704,0.435,0.528,0.761,0.012,0.001
+136,LinearDiscriminantAnalysis,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06452083587646484,0.7547,0.6685,0.44,0.53,0.761,0.016,0.001
+137,QuadraticDiscriminantAnalysis,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.05889630317687988,0.7478,0.6341,0.472,0.541,0.749,0.008,0.001
+138,DecisionTreeClassifier,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 4, 'min_samples_split': 10}",0.8875629901885986,0.7846,0.7491,0.476,0.582,0.806,0.019,0.002
+139,RandomForestClassifier,"['lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}",240.8823380470276,0.7849,0.7391,0.49,0.59,0.807,2.728,0.113
+140,GaussianNB,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.1306319236755371,0.7429,0.6159,0.489,0.545,0.741,0.014,0.002
+141,KNeighborsClassifier,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 7},5.4527428150177,0.7837,0.6976,0.554,0.617,0.803,0.017,0.14
+142,LogisticRegression,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",0.6125953197479248,0.7541,0.6747,0.424,0.521,0.762,0.015,0.002
+143,LinearDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07775568962097168,0.7563,0.6737,0.44,0.532,0.762,0.014,0.001
+144,QuadraticDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.062463998794555664,0.7479,0.634,0.473,0.542,0.747,0.008,0.002
+145,DecisionTreeClassifier,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.5774462223052979,0.7912,0.7159,0.56,0.628,0.779,0.039,0.003
+146,RandomForestClassifier,"['guests_per_night', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}",289.7113347053528,0.793,0.711,0.578,0.638,0.826,3.218,0.164
+147,GaussianNB,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.11821913719177246,0.7671,0.6596,0.539,0.593,0.784,0.022,0.003
+148,KNeighborsClassifier,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 9},5.9122209548950195,0.7997,0.7256,0.586,0.648,0.834,0.015,0.288
+149,LogisticRegression,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",0.9137790203094482,0.7655,0.6895,0.466,0.556,0.8,0.024,0.002
+150,LinearDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07800102233886719,0.7694,0.698,0.473,0.564,0.799,0.016,0.001
+151,QuadraticDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07135701179504395,0.7726,0.6626,0.567,0.611,0.788,0.009,0.002
+152,DecisionTreeClassifier,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2}",1.6986680030822754,0.8035,0.7184,0.619,0.665,0.846,0.04,0.003
+153,RandomForestClassifier,"['has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}",260.1342041492462,0.8119,0.7275,0.644,0.683,0.855,2.912,0.045
+154,GaussianNB,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.11617588996887207,0.7612,0.647,0.533,0.584,0.78,0.007,0.002
+155,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 7},5.477077007293701,0.8147,0.7534,0.613,0.676,0.848,0.018,0.147
+156,LogisticRegression,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 100, 'max_iter': 100}",0.8118140697479248,0.7687,0.6991,0.467,0.56,0.801,0.022,0.002
+157,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.08972001075744629,0.7683,0.695,0.472,0.562,0.8,0.022,0.001
+158,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06924986839294434,0.7634,0.6352,0.585,0.609,0.788,0.011,0.002
+159,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",2.1161069869995117,0.8217,0.7627,0.63,0.69,0.811,0.05,0.003
+160,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}",296.6199300289154,0.8277,0.7723,0.643,0.702,0.872,3.293,0.074
+161,GaussianNB,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.14148402214050293,0.6104,0.3849,0.395,0.39,0.611,0.017,0.005
+162,KNeighborsClassifier,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 3},5.240665912628174,0.6911,0.5112,0.45,0.479,0.695,0.016,0.141
+163,LogisticRegression,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 0.1, 'max_iter': 100}",0.5487830638885498,0.6811,0.3488,0.014,0.026,0.61,0.013,0.001
+164,LinearDiscriminantAnalysis,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06120896339416504,0.6807,0.3407,0.014,0.027,0.61,0.015,0.001
+165,QuadraticDiscriminantAnalysis,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06065487861633301,0.6041,0.3798,0.405,0.392,0.609,0.009,0.002
+166,DecisionTreeClassifier,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.3172547817230225,0.7364,0.6142,0.44,0.512,0.749,0.03,0.018
+167,RandomForestClassifier,"['avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",318.6271948814392,0.7308,0.5953,0.455,0.516,0.76,3.817,0.071
+168,GaussianNB,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.0983591079711914,0.6109,0.3828,0.384,0.383,0.614,0.004,0.005
+169,KNeighborsClassifier,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 3},4.614603042602539,0.7256,0.5678,0.541,0.554,0.74,0.015,0.118
+170,LogisticRegression,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",0.5035979747772217,0.6801,0.368,0.021,0.04,0.613,0.012,0.001
+171,LinearDiscriminantAnalysis,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.059043169021606445,0.681,0.4015,0.025,0.047,0.613,0.012,0.001
+172,QuadraticDiscriminantAnalysis,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.0737459659576416,0.6192,0.3938,0.386,0.39,0.613,0.008,0.004
+173,DecisionTreeClassifier,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",2.0690221786499023,0.7479,0.6154,0.533,0.571,0.751,0.059,0.003
+174,RandomForestClassifier,"['guests_per_night', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}",322.49990606307983,0.7456,0.6072,0.546,0.575,0.787,3.676,0.3
+175,GaussianNB,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.11610126495361328,0.6964,0.5173,0.547,0.532,0.707,0.013,0.005
+176,KNeighborsClassifier,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 7},4.870602130889893,0.7664,0.6569,0.542,0.594,0.792,0.023,0.133
+177,LogisticRegression,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",0.49808835983276367,0.7067,0.567,0.293,0.386,0.714,0.011,0.002
+178,LinearDiscriminantAnalysis,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06232500076293945,0.7078,0.5708,0.293,0.388,0.712,0.014,0.001
+179,QuadraticDiscriminantAnalysis,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07521820068359375,0.706,0.5347,0.515,0.525,0.714,0.008,0.002
+180,DecisionTreeClassifier,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.4144220352172852,0.7901,0.7033,0.577,0.634,0.801,0.032,0.002
+181,RandomForestClassifier,"['has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}",317.22797107696533,0.7878,0.693,0.586,0.635,0.821,3.649,0.238
+182,GaussianNB,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.13509607315063477,0.6954,0.5155,0.556,0.535,0.707,0.02,0.001
+183,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 3},5.279959678649902,0.7696,0.6423,0.607,0.624,0.785,0.025,0.124
+184,LogisticRegression,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 10, 'max_iter': 100}",0.5874910354614258,0.7114,0.5785,0.31,0.404,0.714,0.013,0.001
+185,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06540298461914062,0.7086,0.5711,0.302,0.395,0.713,0.017,0.002
+186,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06338691711425781,0.7015,0.5274,0.507,0.517,0.714,0.009,0.001
+187,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.822883129119873,0.7979,0.7075,0.611,0.656,0.81,0.053,0.003
+188,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}",312.4519159793854,0.8028,0.72,0.612,0.662,0.841,3.485,0.278
+189,GaussianNB,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.12971115112304688,0.7448,0.6155,0.506,0.556,0.751,0.024,0.003
+190,KNeighborsClassifier,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 3},4.582799911499023,0.8087,0.7132,0.657,0.684,0.831,0.016,0.109
+191,LogisticRegression,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",0.578066349029541,0.7578,0.6726,0.451,0.54,0.772,0.014,0.001
+192,LinearDiscriminantAnalysis,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06418085098266602,0.7569,0.668,0.454,0.541,0.772,0.013,0.001
+193,QuadraticDiscriminantAnalysis,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.0630040168762207,0.7438,0.6142,0.502,0.553,0.758,0.011,0.001
+194,DecisionTreeClassifier,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.7370281219482422,0.807,0.7003,0.677,0.689,0.791,0.052,0.002
+195,RandomForestClassifier,"['lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}",368.32620787620544,0.8228,0.7407,0.674,0.706,0.881,4.329,0.41
+196,GaussianNB,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.15489721298217773,0.7406,0.6066,0.503,0.55,0.749,0.025,0.005
+197,KNeighborsClassifier,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 3},4.771399021148682,0.8003,0.6963,0.65,0.672,0.826,0.016,0.129
+198,LogisticRegression,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 0.1, 'max_iter': 100}",0.767085075378418,0.7578,0.6728,0.45,0.539,0.772,0.02,0.002
+199,LinearDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07718801498413086,0.7567,0.6676,0.454,0.541,0.772,0.013,0.001
+200,QuadraticDiscriminantAnalysis,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.062039852142333984,0.7427,0.611,0.505,0.553,0.759,0.009,0.002
+201,DecisionTreeClassifier,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2}",2.3766720294952393,0.8117,0.6991,0.707,0.703,0.791,0.071,0.005
+202,RandomForestClassifier,"['guests_per_night', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}",360.44719886779785,0.831,0.7631,0.673,0.715,0.884,4.25,0.093
+203,GaussianNB,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.15113496780395508,0.7729,0.6617,0.571,0.613,0.792,0.031,0.002
+204,KNeighborsClassifier,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 7},5.283890962600708,0.8492,0.8047,0.689,0.742,0.888,0.022,0.131
+205,LogisticRegression,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 10, 'max_iter': 100}",0.692284107208252,0.779,0.7079,0.508,0.592,0.814,0.016,0.001
+206,LinearDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.06737303733825684,0.7784,0.7077,0.505,0.59,0.814,0.015,0.001
+207,QuadraticDiscriminantAnalysis,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07014918327331543,0.7868,0.6744,0.625,0.649,0.803,0.008,0.002
+208,DecisionTreeClassifier,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 10}",2.1752052307128906,0.8517,0.7943,0.714,0.752,0.876,0.063,0.002
+209,RandomForestClassifier,"['has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}",343.74585914611816,0.8714,0.8341,0.739,0.784,0.919,4.023,0.148
+210,GaussianNB,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.09557509422302246,0.7689,0.655,0.563,0.606,0.79,0.014,0.001
+211,KNeighborsClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{'n_neighbors': 5},6.192836046218872,0.8463,0.7897,0.698,0.741,0.876,0.03,0.157
+212,LogisticRegression,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'C': 1, 'max_iter': 100}",1.1430027484893799,0.779,0.7079,0.508,0.592,0.814,0.025,0.002
+213,LinearDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07847189903259277,0.7785,0.7079,0.506,0.59,0.814,0.017,0.002
+214,QuadraticDiscriminantAnalysis,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']",{},0.07364583015441895,0.7873,0.6784,0.618,0.647,0.803,0.012,0.002
+215,DecisionTreeClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2}",2.8864870071411133,0.8484,0.7588,0.761,0.76,0.84,0.081,0.006
+216,RandomForestClassifier,"['guests_per_night', 'has_special_request', 'lead_time_scaled', 'avg_price_per_room_scaled', 'season_Spring', 'season_Summer', 'season_Winter']","{'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}",342.75278520584106,0.8804,0.8519,0.751,0.798,0.924,3.963,0.26
